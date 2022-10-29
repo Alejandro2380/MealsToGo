@@ -11,7 +11,7 @@ import { SafeArea } from "./src/components/utility/safe-area.component";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {Ionicons} from '@expo/vector-icons';
 import { RestaurantsContextProvider } from './src/services/restaurants/restaurant.context';
-
+import { restaurantsRequest } from './src/services/restaurants/restaurants.service';
 
 const Tab = createBottomTabNavigator();
 
@@ -23,7 +23,7 @@ const TAB_ICON = {
 
 const Settings = () => (
 <SafeArea> 
-  <Text>Settings</Text> 
+  <Text>Settings</Text>
   </SafeArea>
 );
 const Map = () => ( 
