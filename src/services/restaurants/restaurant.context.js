@@ -1,17 +1,17 @@
 import React, {
   useState,
+  useContext,
   createContext,
   useEffect,
   useMemo,
-  useContext,
-} from 'react';
+} from "react";
 
 import {
   restaurantsRequest,
   restaurantsTransform,
-} from './restaurants.service';
+} from "./restaurants.service";
 
-import { LocationContext } from '../location/location.context';
+import { LocationContext } from "../location/location.context";
 
 export const RestaurantsContext = createContext();
 
@@ -29,7 +29,7 @@ export const RestaurantsContextProvider = ({ children }) => {
         .then(restaurantsTransform)
         .then((results) => {
           setIsLoading(false);
-          setRestaurants[results];
+          setRestaurants(results);
         })
         .catch((err) => {
           setIsLoading(false);
